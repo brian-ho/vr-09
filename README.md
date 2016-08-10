@@ -1,2 +1,3 @@
-# vr-09
-For Thursday presentation.
+# MKThink VR Study 09
+
+Demo for Thursday.
