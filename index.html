@@ -35,7 +35,7 @@
     <p style="margin: 10px 0px 0px 10px;"><span id="thingName">information about object</span></p>
   </div>
   <!--<a-scene stats>-->
-  <a-scene>
+  <a-scene fog="type: linear; color: #000; near: 5">
     <a-assets>
       <a-asset-item id="MKTshell" src="resources/MKTshell.obj"></a-asset-item>
       <a-asset-item id="MKTinterior" src="resources/MKTinterior.obj"></a-asset-item>
@@ -69,43 +69,54 @@
       <a-asset-item id="MKTventD1" src="resources/MKThvacD1.obj"></a-asset-item>
       <a-asset-item id="MKTventD2" src="resources/MKThvacD2.obj"></a-asset-item>
       <a-asset-item id="MKTventD3" src="resources/MKThvacD3.obj"></a-asset-item>
+      <a-asset-item id="MKTbase" src="resources/MKTbase.obj"></a-asset-item>
     </a-assets>
-    <a-obj-model src="#MKTshell" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTinterior" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTroof" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTdoors" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTwindow1" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTwindow2" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTwindow3" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTwindow4" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTwindow5" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTcolumns" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTductE" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTductA" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTductB" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTductC" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTductD" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTvavA0" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventA1" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventA2" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventA3" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTvavB0" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventB1" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventB2" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventB3" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTvavC0" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventC1" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTvavtC2" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventC3" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTvavD0" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventD1" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventD2" opacity=1></a-obj-model>
-    <a-obj-model src="#MKTventD3" opacity=1></a-obj-model>
-    <a-light type="spot" color="#333" position="-20 0 0"></a-light>
-    <a-light type="point" color="#AAA" position="0 5 0"></a-light>
-    <a-sky color="#73F7DD"></a-sky>
-    <a-camera position="0 5 0">
-      <a-cursor color="#2E3A87">
+    <a-obj-model class="shell" src="#MKTshell" opacity=1></a-obj-model>
+    <a-obj-model class="bldg" src="#MKTinterior" opacity=1></a-obj-model>
+    <a-obj-model class="roof" src="#MKTroof" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTdoors" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow1" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow2" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow3" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow4" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow5" opacity=1></a-obj-model>
+    <a-obj-model class="structure" src="#MKTcolumns" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTductE" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTductA" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTductB" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTductC" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTductD" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTvavA0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventA1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventA2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventA3" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTvavB0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventB1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventB2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventB3" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTvavC0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventC1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTvavtC2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventC3" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTvavD0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventD1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventD2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKTventD3" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTbase" opacity=1></a-obj-model>
+    <a-entity light="type: ambient; color: #aaa"></a-entity>
+    <a-light type="point" color="#444" position="0 5 0"></a-light>
+    <a-sky color="#fff"></a-sky>
+    <a-camera position="-1 5 -3">
+      <a-entity position="0 0 -3"
+                      geometry="primitive: ring; radiusOuter: 0.15;
+                                radiusInner: 0.10;"
+                      material="color: white; shader: flat; opacity: .5"
+                      cursor="maxDistance: 30; fuse: true">
+              <a-animation begin="click" easing="ease-in" attribute="scale"
+                   fill="backwards" from="0.8 0.8 0.8" to="1 1 1" dur="500"></a-animation>
+              <a-animation begin="fusing" easing="ease-in" attribute="scale"
+                   fill="forwards" from="1 1 1" to="0.8 0.8 0.8" dur="1500"></a-animation>
+            </a-entity>
     </a-camera>
   </a-scene>
   <script src="script.js"></script>
