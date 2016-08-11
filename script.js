@@ -16,12 +16,13 @@ vents.enter().append("a-obj-model")
   .merge(vents)
   .attrs({
       src: function (d) {return "#MKT-" + d},
-      color: function (d, i) {return d3.interpolateInferno(map(i, 0, 20, 0, 1))},
+      color: function (d, i) {return d3.interpolateInferno(map(i, 0, 25, 0, 1))},
       opacity: 0.5
       })
-  .on("mouseenter", function() {
+  .on("mouseenter", function(d, i) {
       if(this.hovering) return;
       this.hovering = true;
+      d3.select("#thingName").text(function () {return "object " + d + ": " + i});
       d3.select(this).transition().duration(1000)
         .attrs({
             color: "white",
@@ -30,6 +31,7 @@ vents.enter().append("a-obj-model")
         })
   .on("mouseleave", function(d, i) {
       this.hovering = false;
+            d3.select("#thingName").text(function () {return "..."});
       d3.select(this).transition().duration(1000)
         .attrs({
             color: function () {return d3.interpolateInferno(map(i, 0, 20, 0, 1))},
