@@ -44,18 +44,18 @@ var yAxis = d3.axisRight()
 holder.append("path")
   .data([numbers])
   .attr("class", "line")
-  .attr("transform", "translate(5 50)")
+  .attr("transform", "translate(5 20)")
 
 holder.append("g")
     .attr("class", "axis")
     .attr("id", "x")
-    .attr("transform", "translate(5 150)")
+    .attr("transform", "translate(5 120)")
     .call(xAxis);
 
 var gy = holder.append("g")
     .attr("class", "axis")
     .attr("id", "y")
-    .attr("transform", "translate(5 50)")
+    .attr("transform", "translate(5 20)")
     .call(yAxis);
 
 gy.selectAll("g").filter(function(d) { return d; })
@@ -88,7 +88,8 @@ vents.enter().append("a-obj-model")
         })
   .on("mouseleave", function(d, i) {
       this.hovering = false;
-            d3.select("#thingName").text(function () {return "..."});
+      updateSparkline();
+      d3.select("#thingName").text(function () {return "..."});
       d3.select(this).transition().duration(200)
         .attrs({
             //color: function () {return d3.interpolateInferno(map(numbers[i], 0, 20, 0, 1))},
@@ -101,11 +102,13 @@ update(numbers);
 function update(data) {
   console.log("FIRING " + data);
 
-  scene.selectAll("a-obj-model.hvac").transition().duration(3000).ease(d3.easeLinear)
+  scene.selectAll("a-obj-model.hvac").transition().duration(1000).ease(d3.easeLinear)
     .attr('color', function (d, i) {return d3.interpolateCool(map(data[i], 0, hvacData.length, 0, 1))})
+}
 
+function updateSparkline() {
   holder.select("path")
-    .transition().duration(3000)
+    .transition().duration(1000)
     .attr("d", d3.line()
         .x(function(d, i) { return x(i)+15; })
         .y(function(d, i) { return y(d); }));
@@ -137,7 +140,7 @@ d3.interval(function() {
       //console.log(sample);
       //.sort(function(a, b) {return a - b});
       update(sample);
-  }, 3000);
+  }, 1000);
 
 function map(value, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
