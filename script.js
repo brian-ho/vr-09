@@ -33,7 +33,7 @@ var y = d3.scaleLinear()
 // create the generate axis functions
 var xAxis = d3.axisBottom()
     .scale(x)
-    .ticks(0);
+    .tickValues(5, 10, 15, 20);
 
 var yAxis = d3.axisRight()
     .scale(y)
@@ -49,7 +49,7 @@ holder.append("path")
 holder.append("g")
     .attr("class", "axis")
     .attr("id", "x")
-    .attr("transform", "translate(5 100)")
+    .attr("transform", "translate(5 150)")
     .call(xAxis);
 
 var gy = holder.append("g")
