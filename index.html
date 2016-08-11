@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto+Mono:100,300,400,700" rel="stylesheet">
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
-  <script src="https://d3js.org/d3-selection-multi.v0.4.min.js"></script>
+  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
   <style>
     body {
       margin:0;
@@ -48,30 +48,30 @@
       <a-asset-item id="MKTwindow4" src="resources/MKTwindow4.obj"></a-asset-item>
       <a-asset-item id="MKTwindow5" src="resources/MKTwindow5.obj"></a-asset-item>
       <a-asset-item id="MKTcolumns" src="resources/MKTcolumns.obj"></a-asset-item>
-      <a-asset-item id="MKTductE" src="resources/MKThvacE.obj"></a-asset-item>
-      <a-asset-item id="MKTductA" src="resources/MKThvacA.obj"></a-asset-item>
-      <a-asset-item id="MKTvavA0" src="resources/MKThvacA0.obj"></a-asset-item>
-      <a-asset-item id="MKTventA1" src="resources/MKThvacA1.obj"></a-asset-item>
-      <a-asset-item id="MKTventA2" src="resources/MKThvacA2.obj"></a-asset-item>
-      <a-asset-item id="MKTventA3" src="resources/MKThvacA3.obj"></a-asset-item>
-      <a-asset-item id="MKTductB" src="resources/MKThvacB.obj"></a-asset-item>
-      <a-asset-item id="MKTvavB0" src="resources/MKThvacB0.obj"></a-asset-item>
-      <a-asset-item id="MKTventB1" src="resources/MKThvacB1.obj"></a-asset-item>
-      <a-asset-item id="MKTventB2" src="resources/MKThvacB2.obj"></a-asset-item>
-      <a-asset-item id="MKTventB3" src="resources/MKThvacB3.obj"></a-asset-item>
-      <a-asset-item id="MKTductC" src="resources/MKThvacC.obj"></a-asset-item>
-      <a-asset-item id="MKTvavC0" src="resources/MKThvacC0.obj"></a-asset-item>
-      <a-asset-item id="MKTventC1" src="resources/MKThvacC1.obj"></a-asset-item>
-      <a-asset-item id="MKTventC2" src="resources/MKThvacC2.obj"></a-asset-item>
-      <a-asset-item id="MKTventC3" src="resources/MKThvacC3.obj"></a-asset-item>
-      <a-asset-item id="MKTductD" src="resources/MKThvacD.obj"></a-asset-item>
-      <a-asset-item id="MKTvavD0" src="resources/MKThvacD0.obj"></a-asset-item>
-      <a-asset-item id="MKTventD1" src="resources/MKThvacD1.obj"></a-asset-item>
-      <a-asset-item id="MKTventD2" src="resources/MKThvacD2.obj"></a-asset-item>
-      <a-asset-item id="MKTventD3" src="resources/MKThvacD3.obj"></a-asset-item>
+      <a-asset-item id="MKT-E" src="resources/MKThvacE.obj"></a-asset-item>
+      <a-asset-item id="MKT-A" src="resources/MKThvacA.obj"></a-asset-item>
+      <a-asset-item id="MKT-A0" src="resources/MKThvacA0.obj"></a-asset-item>
+      <a-asset-item id="MKT-A1" src="resources/MKThvacA1.obj"></a-asset-item>
+      <a-asset-item id="MKT-A2" src="resources/MKThvacA2.obj"></a-asset-item>
+      <a-asset-item id="MKT-A3" src="resources/MKThvacA3.obj"></a-asset-item>
+      <a-asset-item id="MKT-B" src="resources/MKThvacB.obj"></a-asset-item>
+      <a-asset-item id="MKT-B0" src="resources/MKThvacB0.obj"></a-asset-item>
+      <a-asset-item id="MKT-B1" src="resources/MKThvacB1.obj"></a-asset-item>
+      <a-asset-item id="MKT-B2" src="resources/MKThvacB2.obj"></a-asset-item>
+      <a-asset-item id="MKT-B3" src="resources/MKThvacB3.obj"></a-asset-item>
+      <a-asset-item id="MKT-C" src="resources/MKThvacC.obj"></a-asset-item>
+      <a-asset-item id="MKT-C0" src="resources/MKThvacC0.obj"></a-asset-item>
+      <a-asset-item id="MKT-C1" src="resources/MKThvacC1.obj"></a-asset-item>
+      <a-asset-item id="MKT-C2" src="resources/MKThvacC2.obj"></a-asset-item>
+      <a-asset-item id="MKT-C3" src="resources/MKThvacC3.obj"></a-asset-item>
+      <a-asset-item id="MKT-D" src="resources/MKThvacD.obj"></a-asset-item>
+      <a-asset-item id="MKT-D0" src="resources/MKThvacD0.obj"></a-asset-item>
+      <a-asset-item id="MKT-D1" src="resources/MKThvacD1.obj"></a-asset-item>
+      <a-asset-item id="MKT-D2" src="resources/MKThvacD2.obj"></a-asset-item>
+      <a-asset-item id="MKT-D3" src="resources/MKThvacD3.obj"></a-asset-item>
       <a-asset-item id="MKTbase" src="resources/MKTbase.obj"></a-asset-item>
     </a-assets>
-    <a-obj-model class="shell" src="#MKTshell" opacity=1></a-obj-model>
+    -<a-obj-model class="shell" src="#MKTshell" opacity=1></a-obj-model>
     <a-obj-model class="bldg" src="#MKTinterior" opacity=1></a-obj-model>
     <a-obj-model class="roof" src="#MKTroof" opacity=1></a-obj-model>
     <a-obj-model class="shell" src="#MKTdoors" opacity=1></a-obj-model>
@@ -81,27 +81,27 @@
     <a-obj-model class="shell" src="#MKTwindow4" opacity=1></a-obj-model>
     <a-obj-model class="shell" src="#MKTwindow5" opacity=1></a-obj-model>
     <a-obj-model class="structure" src="#MKTcolumns" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTductE" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTductA" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTductB" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTductC" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTductD" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTvavA0" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventA1" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventA2" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventA3" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTvavB0" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventB1" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventB2" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventB3" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTvavC0" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventC1" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTvavtC2" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventC3" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTvavD0" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventD1" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventD2" opacity=1></a-obj-model>
-    <a-obj-model class="hvac" src="#MKTventD3" opacity=1></a-obj-model>
+    <!--<a-obj-model class="hvac" src="#MKT-E" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-C" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A3" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B3" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-C0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-C1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-tC2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-C3" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D3" opacity=1></a-obj-model>-->
     <a-obj-model class="shell" src="#MKTbase" opacity=1></a-obj-model>
     <a-entity light="type: ambient; color: #aaa"></a-entity>
     <a-light type="point" color="#444" position="0 5 0"></a-light>
