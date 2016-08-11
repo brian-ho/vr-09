@@ -22,43 +22,40 @@ var holder = d3.select("#interface")
     .attr("width", 250)
     .attr("height", 250);
 
-var xScale = d3.scaleLinear()
-    .domain([0, 21])
+var x = d3.scaleLinear()
+    .domain([0, 22])
     .range([0, gWidth]);
 
-var yScale = d3.scaleLinear()
+var y = d3.scaleLinear()
     .domain([0, 20])
     .range([gHeight, 0]);
 
 // create the generate axis functions
 var xAxis = d3.axisBottom()
-    .scale(xScale)
+    .scale(x)
     .ticks(0);
 
 var yAxis = d3.axisRight()
-    .scale(yScale)
+    .scale(y)
     .tickValues([0, 5, 10, 15, 20])
     //.tickFormat(d3.format(".0%"))
     .tickSize(gWidth);
-/*
+
 holder.append("path")
-    .data(numbers, function(d, i) {return d, i})
-    .attr("class", "line")
-    .attr("d", d3.line()
-        .xScale(function(d) { return xScale(i); })
-        .yScale(function(d) { return yScale(d); }));
-*/
+  .data([numbers])
+  .attr("class", "line")
+  .attr("transform", "translate(5 50)")
 
 holder.append("g")
     .attr("class", "axis")
     .attr("id", "x")
-    .attr("transform", "translate(5 150)")
+    .attr("transform", "translate(5 100)")
     .call(xAxis);
 
 var gy = holder.append("g")
     .attr("class", "axis")
     .attr("id", "y")
-    .attr("transform", "translate(5 100)")
+    .attr("transform", "translate(5 50)")
     .call(yAxis);
 
 gy.selectAll("g").filter(function(d) { return d; })
@@ -67,6 +64,7 @@ gy.selectAll("g").filter(function(d) { return d; })
 gy.selectAll("text")
     .attr("x", 0)
     .attr("dy", -4);
+
 
 var vents = scene.selectAll("a-obj-model.hvac").data(hvacData, function(d) {return d})
 
@@ -98,13 +96,19 @@ vents.enter().append("a-obj-model")
           })
         });
 
-update(numbers)
+update(numbers);
 
 function update(data) {
   console.log("FIRING " + data);
 
-  scene.selectAll("a-obj-model.hvac").transition().duration(5000).ease(d3.easeLinear)
+  scene.selectAll("a-obj-model.hvac").transition().duration(3000).ease(d3.easeLinear)
     .attr('color', function (d, i) {return d3.interpolateCool(map(data[i], 0, hvacData.length, 0, 1))})
+
+  holder.select("path")
+    .transition().duration(3000)
+    .attr("d", d3.line()
+        .x(function(d, i) { return x(i)+15; })
+        .y(function(d, i) { return y(d); }));
 }
 
 scene.selectAll(".structure").attrs({
