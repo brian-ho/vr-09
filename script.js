@@ -10,9 +10,47 @@ var scene = d3.select("a-scene");
 
 // create responsive HVAC
 
-var hvacData = ['A0', 'A1', 'A2', 'A3', 'A', 'B0', 'B1', 'B2', 'B3', 'B', 'C0', 'C1', 'C2', 'C3', 'C', 'D0', 'D1', 'D2', 'D3', 'D'];
-var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+var hvacData = ['A0', 'A1', 'A2', 'A3', 'A', 'B0', 'B1', 'B2', 'B3', 'B', 'C0', 'C1', 'C2', 'C3', 'C', 'D0', 'D1', 'D2', 'D3', 'D', 'E'];
+var numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20, 21];
 var sample;
+
+var holder = d3.select("#interface")
+    .append("svg")
+    .attr("width", 250)
+    .attr("height", 250)
+    .attr("transform", "translate(100, 100)");
+
+var xScale = d3.scaleLinear()
+    .domain([0, 21])
+    .range([0, 200]);
+
+var yScale = d3.scaleLinear()
+    .domain([0, 100])
+    .range([0, 30]);
+
+// create the generate axis functions
+var xAxis = d3.axisBottom()
+    .scale(xScale)
+    //.tickValues([maxRight, (maxRight)*.75, (maxRight)*.5, (maxRight)*.25])
+    .tickSize(1);
+
+var yAxis = d3.axisLeft()
+    .scale(yScale)
+    //.tickValues([maxTop, (maxTop)*.75, (maxTop)*.5, (maxTop)*.25])
+    //.tickFormat(d3.format(".0%"))
+    .tickSize(1);
+
+holder.append("g")
+    .attr("class", "axis")
+    .attr("id", "x")
+    //.attr("transform", "translate(" + posX + "," + posY + ")")
+    .call(xAxis);
+
+holder.append("g")
+    .attr("class", "axis")
+    .attr("id", "y")
+    //.attr("transform", "translate(" + posX + "," + posY + ")")
+    .call(yAxis);
 
 var vents = scene.selectAll("a-obj-model.hvac").data(hvacData, function(d) {return d})
 
@@ -24,11 +62,11 @@ vents.enter().append("a-obj-model")
       //color: function (d, i) {return d3.interpolateInferno(map(numbers[i], 0, 20, 0, 1))},
       opacity: 0.5
       })
-  .on("mouseenter", function(d, i) {
+  .on("click", function(d, i) {
       if(this.hovering) return;
       this.hovering = true;
-      d3.select("#thingName").text(function () {return "HVAC_" + d + ": " + sample[i]});
-      d3.select(this).transition().duration(1000)
+      d3.select("#thingName").text(function () {return "HVAC_" + d + " " + sample[i]});
+      d3.select(this).transition().duration(500)
         .attrs({
             color: "white",
             opacity: 1
@@ -37,7 +75,7 @@ vents.enter().append("a-obj-model")
   .on("mouseleave", function(d, i) {
       this.hovering = false;
             d3.select("#thingName").text(function () {return "..."});
-      d3.select(this).transition().duration(1000)
+      d3.select(this).transition().duration(500)
         .attrs({
             //color: function () {return d3.interpolateInferno(map(numbers[i], 0, 20, 0, 1))},
             opacity: 0.5
@@ -50,7 +88,7 @@ function update(data) {
   console.log("FIRING " + data);
 
   scene.selectAll("a-obj-model.hvac").transition().duration(3000).ease(d3.easeLinear)
-    .attr('color', function (d, i) {return d3.interpolateCool(map(data[i], 0, 20, 0, 1))})
+    .attr('color', function (d, i) {return d3.interpolateCool(map(data[i], 0, hvacData.length, 0, 1))})
 }
 
 scene.selectAll(".structure").attrs({
