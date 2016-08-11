@@ -16,21 +16,24 @@ vents.enter().append("a-obj-model")
   .merge(vents)
   .attrs({
       src: function (d) {return "#MKT-" + d},
-      color: function (d, i) {return d3.interpolateInferno(map(i, 0, 20, 0, 1))}
+      color: function (d, i) {return d3.interpolateInferno(map(i, 0, 20, 0, 1))},
+      opacity: 0.5
       })
   .on("mouseenter", function() {
       if(this.hovering) return;
       this.hovering = true;
       d3.select(this).transition().duration(1000)
         .attrs({
-            color: "white"
+            color: "white",
+            opacity: 1
           })
         })
   .on("mouseleave", function(d, i) {
       this.hovering = false;
       d3.select(this).transition().duration(1000)
         .attrs({
-            color: function () {return d3.interpolateInferno(map(i, 0, 20, 0, 1))}
+            color: function () {return d3.interpolateInferno(map(i, 0, 20, 0, 1))},
+            opacity: 0.5
           })
         });
 
@@ -41,7 +44,7 @@ scene.selectAll(".bldg").attrs({
     });
 
 scene.selectAll(".structure").attrs({
-      color: "white",
+      color: "cyan",
       opacity: .85
     });
 
@@ -55,7 +58,7 @@ scene.selectAll(".roof").attrs({
       opacity: 1
     });
 
-update(positions);
+/*update(positions);
 
 function update(data) {
 
@@ -73,7 +76,7 @@ points.enter().append("a-sphere")
   color: function(d, i) {
     return d3.interpolateCool(map(i, 0, 216, 0, 1))}
 });
-}
+}*/
 
 function map(value, low1, high1, low2, high2) {
     return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
