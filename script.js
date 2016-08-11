@@ -14,20 +14,23 @@ var vents = scene.selectAll("a-obj-model.hvac").data(hvacData)
 vents.enter().append("a-obj-model")
   .classed("hvac", true)
   .merge(vents)
-  .attr("src", function (d) {return "#MKT-" + d})
+  .attrs({
+      src: function (d) {return "#MKT-" + d},
+      color: function (d, i) {return d3.interpolateInferno(map(i, 0, 20, 0, 1))}
+      })
   .on("mouseenter", function() {
       if(this.hovering) return;
       this.hovering = true;
       d3.select(this).transition().duration(1000)
         .attrs({
-            color: "red"
+            color: "white"
           })
         })
-  .on("mouseleave", function() {
+  .on("mouseleave", function(d, i) {
       this.hovering = false;
       d3.select(this).transition().duration(1000)
         .attrs({
-            color: "white"
+            color: function () {return d3.interpolateInferno(map(i, 0, 20, 0, 1))}
           })
         });
 

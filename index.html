@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <head>
-  <meta charset="utf8">
-  <link rel="appletouchicon" sizes="180x180" href="/appletouchicon.png">
-  <link rel="icon" type="image/png" href="/favicon32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicon16x16.png" sizes="16x16">
+  <meta charset="utf-8">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <link rel="manifest" href="/manifest.json">
-  <link rel="maskicon" href="/safaripinnedtab.svg" color="#5bbad5">
-  <meta name="themecolor" content="#ffffff">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto+Mono:100,300,400,700" rel="stylesheet">
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
-  <script src="https://d3js.org/d3selectionmulti.v0.4.min.js"></script>
+  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
   <style>
     body {
       margin:0;
@@ -20,104 +20,104 @@
       left:0; }
 
     .ui {
-      zindex: 10000;
+      z-index: 10000;
       position: absolute;
-      fontfamily: 'Roboto Mono', monospace;
-      fontweight: 100;
+      font-family: 'Roboto Mono', monospace;
+      font-weight: 100;
       color: white;
-      fontsize: 18px; }
+      font-size: 18px; }
   </style>
 </head>
 
 <body>
   <div class="ui">
-    <p style="margin: 10px 0px 0px 10px; fontweight: bold;">VR VIEWER</p>
+    <p style="margin: 10px 0px 0px 10px; font-weight: bold;">VR VIEWER</p>
     <p style="margin: 10px 0px 0px 10px;"><span id="thingName">information about object</span></p>
   </div>
-  <!<ascene stats>>
-  <ascene fog="type: linear; color: #000; near: 5">
-    <aassets>
-      <aassetitem id="MKTshell" src="resources/MKTshell.obj"></aassetitem>
-      <aassetitem id="MKTinterior" src="resources/MKTinterior.obj"></aassetitem>
-      <aassetitem id="MKTroof" src="resources/MKTroof.obj"></aassetitem>
-      <aassetitem id="MKTdoors" src="resources/MKTdoors.obj"></aassetitem>
-      <aassetitem id="MKTwindow0" src="resources/MKTwindow0.obj"></aassetitem>
-      <aassetitem id="MKTwindow1" src="resources/MKTwindow1.obj"></aassetitem>
-      <aassetitem id="MKTwindow2" src="resources/MKTwindow2.obj"></aassetitem>
-      <aassetitem id="MKTwindow3" src="resources/MKTwindow3.obj"></aassetitem>
-      <aassetitem id="MKTwindow4" src="resources/MKTwindow4.obj"></aassetitem>
-      <aassetitem id="MKTwindow5" src="resources/MKTwindow5.obj"></aassetitem>
-      <aassetitem id="MKTcolumns" src="resources/MKTcolumns.obj"></aassetitem>
-      <aassetitem id="MKT-E" src="resources/MKThvacE.obj"></aassetitem>
-      <aassetitem id="MKT-A" src="resources/MKThvacA.obj"></aassetitem>
-      <aassetitem id="MKT-A0" src="resources/MKThvacA0.obj"></aassetitem>
-      <aassetitem id="MKT-A1" src="resources/MKThvacA1.obj"></aassetitem>
-      <aassetitem id="MKT-A2" src="resources/MKThvacA2.obj"></aassetitem>
-      <aassetitem id="MKT-A3" src="resources/MKThvacA3.obj"></aassetitem>
-      <aassetitem id="MKT-B" src="resources/MKThvacB.obj"></aassetitem>
-      <aassetitem id="MKT-B0" src="resources/MKThvacB0.obj"></aassetitem>
-      <aassetitem id="MKT-B1" src="resources/MKThvacB1.obj"></aassetitem>
-      <aassetitem id="MKT-B2" src="resources/MKThvacB2.obj"></aassetitem>
-      <aassetitem id="MKT-B3" src="resources/MKThvacB3.obj"></aassetitem>
-      <aassetitem id="MKT-C" src="resources/MKThvacC.obj"></aassetitem>
-      <aassetitem id="MKT-C0" src="resources/MKThvacC0.obj"></aassetitem>
-      <aassetitem id="MKT-C1" src="resources/MKThvacC1.obj"></aassetitem>
-      <aassetitem id="MKT-C2" src="resources/MKThvacC2.obj"></aassetitem>
-      <aassetitem id="MKT-C3" src="resources/MKThvacC3.obj"></aassetitem>
-      <aassetitem id="MKT-D" src="resources/MKThvacD.obj"></aassetitem>
-      <aassetitem id="MKT-D0" src="resources/MKThvacD0.obj"></aassetitem>
-      <aassetitem id="MKT-D1" src="resources/MKThvacD1.obj"></aassetitem>
-      <aassetitem id="MKT-D2" src="resources/MKThvacD2.obj"></aassetitem>
-      <aassetitem id="MKT-D3" src="resources/MKThvacD3.obj"></aassetitem>
-      <aassetitem id="MKTbase" src="resources/MKTbase.obj"></aassetitem>
-    </aassets>
-    <aobjmodel class="shell" src="#MKTshell" opacity=1></aobjmodel>
-    <aobjmodel class="bldg" src="#MKTinterior" opacity=1></aobjmodel>
-    <aobjmodel class="roof" src="#MKTroof" opacity=1></aobjmodel>
-    <aobjmodel class="shell" src="#MKTdoors" opacity=1></aobjmodel>
-    <aobjmodel class="shell" src="#MKTwindow1" opacity=1></aobjmodel>
-    <aobjmodel class="shell" src="#MKTwindow2" opacity=1></aobjmodel>
-    <aobjmodel class="shell" src="#MKTwindow3" opacity=1></aobjmodel>
-    <aobjmodel class="shell" src="#MKTwindow4" opacity=1></aobjmodel>
-    <aobjmodel class="shell" src="#MKTwindow5" opacity=1></aobjmodel>
-    <aobjmodel class="structure" src="#MKTcolumns" opacity=1></aobjmodel>
-    <!--<aobjmodel class="hvac" src="#MKT-E" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-A" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-B" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-C" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-D" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-A0" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-A1" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-A2" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-A3" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-B0" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-B1" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-B2" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-B3" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-C0" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-C1" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-tC2" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-C3" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-D0" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-D1" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-D2" opacity=1></aobjmodel>
-    <aobjmodel class="hvac" src="#MKT-D3" opacity=1></aobjmodel>-->
-    <aobjmodel class="shell" src="#MKTbase" opacity=1></aobjmodel>
-    <aentity light="type: ambient; color: #aaa"></aentity>
-    <alight type="point" color="#444" position="0 5 0"></alight>
-    <asky color="#fff"></asky>
-    <acamera position="1 5 3">
-      <aentity position="0 0 3"
+  <!--<a-scene stats>-->
+  <a-scene fog="type: linear; color: #000; near: 5">
+    <a-assets>
+      <a-asset-item id="MKTshell" src="resources/MKTshell.obj"></a-asset-item>
+      <a-asset-item id="MKTinterior" src="resources/MKTinterior.obj"></a-asset-item>
+      <a-asset-item id="MKTroof" src="resources/MKTroof.obj"></a-asset-item>
+      <a-asset-item id="MKTdoors" src="resources/MKTdoors.obj"></a-asset-item>
+      <a-asset-item id="MKTwindow0" src="resources/MKTwindow0.obj"></a-asset-item>
+      <a-asset-item id="MKTwindow1" src="resources/MKTwindow1.obj"></a-asset-item>
+      <a-asset-item id="MKTwindow2" src="resources/MKTwindow2.obj"></a-asset-item>
+      <a-asset-item id="MKTwindow3" src="resources/MKTwindow3.obj"></a-asset-item>
+      <a-asset-item id="MKTwindow4" src="resources/MKTwindow4.obj"></a-asset-item>
+      <a-asset-item id="MKTwindow5" src="resources/MKTwindow5.obj"></a-asset-item>
+      <a-asset-item id="MKTcolumns" src="resources/MKTcolumns.obj"></a-asset-item>
+      <a-asset-item id="MKT-E" src="resources/MKThvacE.obj"></a-asset-item>
+      <a-asset-item id="MKT-A" src="resources/MKThvacA.obj"></a-asset-item>
+      <a-asset-item id="MKT-A0" src="resources/MKThvacA0.obj"></a-asset-item>
+      <a-asset-item id="MKT-A1" src="resources/MKThvacA1.obj"></a-asset-item>
+      <a-asset-item id="MKT-A2" src="resources/MKThvacA2.obj"></a-asset-item>
+      <a-asset-item id="MKT-A3" src="resources/MKThvacA3.obj"></a-asset-item>
+      <a-asset-item id="MKT-B" src="resources/MKThvacB.obj"></a-asset-item>
+      <a-asset-item id="MKT-B0" src="resources/MKThvacB0.obj"></a-asset-item>
+      <a-asset-item id="MKT-B1" src="resources/MKThvacB1.obj"></a-asset-item>
+      <a-asset-item id="MKT-B2" src="resources/MKThvacB2.obj"></a-asset-item>
+      <a-asset-item id="MKT-B3" src="resources/MKThvacB3.obj"></a-asset-item>
+      <a-asset-item id="MKT-C" src="resources/MKThvacC.obj"></a-asset-item>
+      <a-asset-item id="MKT-C0" src="resources/MKThvacC0.obj"></a-asset-item>
+      <a-asset-item id="MKT-C1" src="resources/MKThvacC1.obj"></a-asset-item>
+      <a-asset-item id="MKT-C2" src="resources/MKThvacC2.obj"></a-asset-item>
+      <a-asset-item id="MKT-C3" src="resources/MKThvacC3.obj"></a-asset-item>
+      <a-asset-item id="MKT-D" src="resources/MKThvacD.obj"></a-asset-item>
+      <a-asset-item id="MKT-D0" src="resources/MKThvacD0.obj"></a-asset-item>
+      <a-asset-item id="MKT-D1" src="resources/MKThvacD1.obj"></a-asset-item>
+      <a-asset-item id="MKT-D2" src="resources/MKThvacD2.obj"></a-asset-item>
+      <a-asset-item id="MKT-D3" src="resources/MKThvacD3.obj"></a-asset-item>
+      <a-asset-item id="MKTbase" src="resources/MKTbase.obj"></a-asset-item>
+    </a-assets>
+    -<a-obj-model class="shell" src="#MKTshell" opacity=1></a-obj-model>
+    <a-obj-model class="bldg" src="#MKTinterior" opacity=1></a-obj-model>
+    <a-obj-model class="roof" src="#MKTroof" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTdoors" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow1" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow2" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow3" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow4" opacity=1></a-obj-model>
+    <a-obj-model class="shell" src="#MKTwindow5" opacity=1></a-obj-model>
+    <a-obj-model class="structure" src="#MKTcolumns" opacity=1></a-obj-model>
+    <!--<a-obj-model class="hvac" src="#MKT-E" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-C" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-A3" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-B3" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-C0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-C1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-tC2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-C3" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D0" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D1" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D2" opacity=1></a-obj-model>
+    <a-obj-model class="hvac" src="#MKT-D3" opacity=1></a-obj-model>-->
+    <a-obj-model class="shell" src="#MKTbase" opacity=1></a-obj-model>
+    <a-entity light="type: ambient; color: #aaa"></a-entity>
+    <a-light type="point" color="#444" position="0 5 0"></a-light>
+    <a-sky color="#fff"></a-sky>
+    <a-camera position="-1 5 -3">
+      <a-entity position="0 0 -3"
                       geometry="primitive: ring; radiusOuter: 0.15;
                                 radiusInner: 0.10;"
                       material="color: white; shader: flat; opacity: .5"
                       cursor="maxDistance: 30; fuse: true">
-              <aanimation begin="click" easing="easein" attribute="scale"
-                   fill="backwards" from="0.8 0.8 0.8" to="1 1 1" dur="500"></aanimation>
-              <aanimation begin="fusing" easing="easein" attribute="scale"
-                   fill="forwards" from="1 1 1" to="0.8 0.8 0.8" dur="1500"></aanimation>
-            </aentity>
-    </acamera>
-  </ascene>
+              <a-animation begin="click" easing="ease-in" attribute="scale"
+                   fill="backwards" from="0.8 0.8 0.8" to="1 1 1" dur="500"></a-animation>
+              <a-animation begin="fusing" easing="ease-in" attribute="scale"
+                   fill="forwards" from="1 1 1" to="0.8 0.8 0.8" dur="1500"></a-animation>
+            </a-entity>
+    </a-camera>
+  </a-scene>
   <script src="script.js"></script>
 </body>
